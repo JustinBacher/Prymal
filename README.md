@@ -1,1 +1,1 @@
-# Prymal
+# Pryml
