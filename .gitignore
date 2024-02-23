@@ -1,3 +1,7 @@
+# Editors
+.vscode
+.fleet
+
 *.py[cod]
 
 # C extensions
