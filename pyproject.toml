@@ -10,11 +10,12 @@ license = "LGPL V3.0"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = ">=3.10"
+python = "<4.0,>=3.10"
 
 
 [tool.poetry.group.dev.dependencies]
 black = "^24.2.0"
+isort = "^5.13.2"
 
 [build-system]
 requires = ["poetry-core"]
