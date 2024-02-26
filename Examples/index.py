@@ -1,9 +1,13 @@
-class Div:
-    def __hash__(self) -> int:
-        return id(self)
+"""
+Basic Example usage of Prymal
 
-    def __repr__(self) -> str:
-        return f"<div></div>"
+NOTE: This document is currently in draft form. It will be updated
+substantially as Prymal is being developed.
+"""
 
+from pryml.core.elements import Container, Text
+from pryml.core.style import Style
 
-print({Div(): 1, Div(): 2})
+example = Container(style=Style(flex_direction="horizontal"))(
+    Text("Hello World!") @ Style(font_style="bold"),
+)
