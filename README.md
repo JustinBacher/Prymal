@@ -8,7 +8,7 @@
   [![Status](https://img.shields.io/badge/Status-In_Development-red)](/../../)
   [![Versions](https://img.shields.io/python/required-version-toml?tomlFilePath=https%3A%2F%2Fraw.githubusercontent.com%2FJustinBacher%2FPrymal%2Fmain%2Fpyproject.toml&logo=python&labelColor=yellow)](https://python.org/)
   [![License](https://img.shields.io/github/license/JustinBacher/Prymal?color=blue)](LICENSE.txt)
-  [![Style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+  [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
   [![Poetry](https://img.shields.io/endpoint?url=https://python-poetry.org/badge/v0.json)](https://python-poetry.org/)
 </div>
 
