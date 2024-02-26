@@ -1,21 +1,26 @@
-[tool.poetry]
+[project]
 name = "prymal"
+description = "Python UI framework designed to revolutionize frontend development by providing a abstract and versatile approach to building user interfaces."
 version = "0.1.0"
-description = ""
 authors = ["Justin M Bacher"]
 license = "LGPL-3.0-or-later"
-keywords = ["HTML", "HTMX"]
 readme = "README.md"
+requires-python = "<4.0,>=3.10"
+keywords = [
+    "jinja", "htmx", "ui", "framework", "ui"
+]
 classifiers = [
     "Development Status :: 1 - Planning",
+    "Intended Audience :: Developers",
     "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
     "Topic :: Internet :: WWW/HTTP",
     "Environment :: Web Environment",
     "Framework :: Prymal",
-    "Programming Language :: Cython",
+    "Programming Language :: Python",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3 :: Only",
 ]
 
 [tool.poetry.dependencies]
@@ -23,7 +28,7 @@ python = "<4.0,>=3.10"
 
 [tool.ruff]
 line-length = 100
-src = ["prymal", "test"]
+src = ["prymal", "tests"]
 ignore-init-module-imports = true
 
 [tool.ruff.format]
