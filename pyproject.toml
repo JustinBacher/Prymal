@@ -5,7 +5,7 @@ version = "0.1.0"
 authors = ["Justin M Bacher"]
 license = "LGPL-3.0-or-later"
 readme = "README.md"
-requires-python = "<4.0,>=3.10"
+requires-python = ">=3.10"
 keywords = [
     "jinja", "htmx", "ui", "framework", "ui"
 ]
