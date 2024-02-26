@@ -17,10 +17,10 @@
 
 # What is Prymal? 🤷
 
-Prymal is a groundbreaking UI framework designed to revolutionize frontend development by providing a seamless and versatile approach to building user interfaces.
+Prymal is a groundbreaking UI framework designed to revolutionize frontend development by providing an abstract and versatile approach to building user interfaces.
 Inspired by the best aspects of frameworks such React, React Native, Svelte, and Qwik Prymal aims to simplify and modernize the current UI development process.
 
-## Write once deliver everywhere 🍱
+## Write once deliver everywhere 🚀
 
 Prymal allows you to create your UI components once and effortlessly deploy them across various platforms, including web, iOS, Android, and desktop.
 This ensures a consistent user experience across different devices, reducing development time and effort.
