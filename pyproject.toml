@@ -1,20 +1,39 @@
-[project]
-requires-python = ">=3.10"
-
 [tool.poetry]
-name = "pryml"
+name = "prymal"
 version = "0.1.0"
 description = ""
 authors = ["Justin M Bacher"]
-license = "LGPL V3.0"
+license = "LGPL-3.0-or-later"
+keywords = ["HTML", "HTMX"]
 readme = "README.md"
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "License :: OSI Approved :: GNU Lesser General Public License v3 or later (LGPLv3+)",
+    "Topic :: Internet :: WWW/HTTP",
+    "Environment :: Web Environment",
+    "Framework :: Prymal",
+    "Programming Language :: Cython",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
 
 [tool.poetry.dependencies]
 python = "<4.0,>=3.10"
 
+[tool.ruff]
+line-length = 100
+src = ["prymal", "test"]
+ignore-init-module-imports = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = true
+docstring-code-line-length = 100
 
 [tool.poetry.group.dev.dependencies]
-black = "^24.2.0"
+ruff = "^0.2.2"
 isort = "^5.13.2"
 
 [build-system]

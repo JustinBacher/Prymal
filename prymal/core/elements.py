@@ -2,14 +2,11 @@
 
 from collections import defaultdict
 from collections.abc import Callable
-from typing import TypeAlias
+from typing import Self, TypeAlias
 
-from typing_extensions import Self
+from .style import Style
 
-from .events import BaseEvent
-from .style import BaseStyle
-
-BASE_STYLE = BaseStyle()
+BASE_STYLE = Style()
 BaseElementType: TypeAlias = "BaseElement"
 
 
@@ -18,10 +15,10 @@ class BaseElement:
     Base element class from which all other elements derive from.
     """
 
-    def __init__(self, style: BaseStyle = BASE_STYLE) -> None:
+    def __init__(self, style: Style = BASE_STYLE) -> None:
         self._parent: BaseElementType = self
         self.children: list[BaseElement] = []
-        self.style: BaseStyle = style
+        self.style: Style = style
         self.event_listeners: dict[str, list[Callable]] = defaultdict(list)
 
     @property
@@ -46,7 +43,7 @@ class BaseElement:
         self.children.extend(children)
         return self
 
-    def __matmul__(self, other: BaseStyle) -> Self:
+    def __matmul__(self, other: Style) -> Self:
         self.style |= other
         return self
 
@@ -61,7 +58,7 @@ class Container(BaseElement):
     in Android.
     """
 
-    def __init__(self, style: BaseStyle | None = None, *children: BaseElement) -> None:
+    def __init__(self, style: Style | None = None, *children: BaseElement) -> None:
         super().__init__()
         for element in children:
             element.parent = self
@@ -90,4 +87,5 @@ class TextInput(BaseElement):
     def __init__(
         self,
     ) -> None:
+        super().__init__()
         super().__init__()

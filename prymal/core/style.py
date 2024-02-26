@@ -2,10 +2,7 @@
 Core Styling Functionality
 """
 
-from types import UnionType
-from typing import Any, Self, TypeAlias
-
-from .elements import BaseElement
+from typing import Any, TypeAlias
 
 StyleType: TypeAlias = "Style"
 
