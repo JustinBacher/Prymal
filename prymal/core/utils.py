@@ -1,7 +1,8 @@
 from collections import defaultdict
 from collections.abc import MutableSet
+from threading import Lock
 from types import NoneType
-from typing import Callable, Self, TypeVar
+from typing import Callable, TypeVar
 
 T = TypeVar("T")
 
@@ -46,3 +47,46 @@ class OrderedSet(defaultdict, MutableSet):
     symmetric_difference = property(lambda self: self.__xor__)
     symmetric_difference_update = property(lambda self: self.__ixor__)
     union = property(lambda self: self.__or__)
+
+
+class IDGenerator:
+    __slots__ = ("lock", "_id")
+
+    def __init__(self) -> None:
+        self.lock = Lock()
+        self._id = 0
+
+    def __call__(self) -> int:
+        with self.lock:
+            self._id += 1
+            return self._id
+
+
+_id_generators = defaultdict(IDGenerator)
+
+
+def generate_unique_id(key: str | type | None = None) -> int:
+    """
+    Used for generating unique IDs. Each key will use a different ID generator.
+    """
+    return _id_generators[key]()
+
+
+class AbstractHashable:
+
+    @property
+    def id(self) -> int:
+        try:
+            self.__id
+        except AttributeError:
+            self.__id = generate_unique_id(self.__class__)
+
+        return self.__id
+
+    def __hash__(self) -> int:
+        return self.id
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, self.__class__):
+            return False
+        return self.id == other.id
