@@ -2,7 +2,7 @@
 Component class and implementation
 """
 
-from .style import Style
+from .core.style import Style
 
 _base_style = Style()
 

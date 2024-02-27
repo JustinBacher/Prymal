@@ -1,4 +1,4 @@
-from ..core.elements import HTMLElement  # type: ignore
+from ..core.element import HTMLElement  # type: ignore
 
 """
 Main root
