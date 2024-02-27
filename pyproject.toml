@@ -5,7 +5,7 @@ version = "0.1.0"
 authors = ["Justin M Bacher"]
 license = "LGPL-3.0-or-later"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.10,<4.0"
 keywords = [
     "jinja", "htmx", "ui", "framework", "ui"
 ]
@@ -24,13 +24,14 @@ classifiers = [
 ]
 
 dependencies = [
-    "litestar"
+    "litestar",
+    "watchfiles",
 ]
 
 
 [project.optional-dependencies]
 lint = [
-    "isort"
+    "isort",
 ]
 
 [tool.ruff]
@@ -44,6 +45,3 @@ indent-style = "space"
 docstring-code-format = true
 docstring-code-line-length = 100
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
