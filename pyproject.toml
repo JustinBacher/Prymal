@@ -1,11 +1,13 @@
 [project]
 name = "prymal"
+requires-python = ">=3.10,<4.0"
 description = "Python UI framework designed to revolutionize frontend development by providing a abstract and versatile approach to building user interfaces."
 version = "0.1.0"
-authors = ["Justin M Bacher"]
+authors = [
+    {name = "Justin M Bacher", email = "92jbach@gmail.com"},
+]
 license = "LGPL-3.0-or-later"
 readme = "README.md"
-requires-python = ">=3.10,<4.0"
 keywords = [
     "jinja", "htmx", "ui", "framework", "ui"
 ]
@@ -28,6 +30,8 @@ dependencies = [
     "watchfiles",
 ]
 
+[project.urls]
+Homepage = "https://github.com/JustinBacher/Prymal"
 
 [project.optional-dependencies]
 lint = [
@@ -45,3 +49,19 @@ indent-style = "space"
 docstring-code-format = true
 docstring-code-line-length = 100
 
+[tool.isort]
+line_length = 100
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+combine_as_imports = true
+color_output = true
+
+[tool.mypy]
+strict = true
+warn_return_any = false
+show_error_codes = true
+
+[[tool.mypy.overrides]]
+module = ['trio.*']
+ignore_missing_imports = true
