@@ -23,8 +23,15 @@ classifiers = [
     "Programming Language :: Python :: 3 :: Only",
 ]
 
-[tool.poetry.dependencies]
-python = "<4.0,>=3.10"
+dependencies = [
+    "litestar"
+]
+
+
+[project.optional-dependencies]
+lint = [
+    "isort"
+]
 
 [tool.ruff]
 line-length = 100
@@ -36,10 +43,6 @@ quote-style = "double"
 indent-style = "space"
 docstring-code-format = true
 docstring-code-line-length = 100
-
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.2.2"
-isort = "^5.13.2"
 
 [build-system]
 requires = ["poetry-core"]
