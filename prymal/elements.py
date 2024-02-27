@@ -40,8 +40,6 @@ class TextInput(Element):
     Element for retrieving text from the user.
     """
 
-    def __init__(
-        self,
-    ) -> None:
+    def __init__(self) -> None:
         super().__init__()
         super().__init__()
