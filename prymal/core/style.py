@@ -2,13 +2,42 @@
 Core Styling Functionality
 """
 
-from typing import Any, Self, TypeAlias
+from collections.abc import Hashable
+from typing import Self, TypeAlias
 
 from .element import ElementType
-from .utils import AbstractHashable
+from .utils import AbstractHashable, generate_unique_id
 
 StyleType: TypeAlias = "Style"
+StylePropertyType: TypeAlias = "StyleProperty"
 
+
+class StyleProperty:
+    """
+    A property for a style class. Similair to a CSS style, whereas a `Style` would be a CSS stylesheet.
+    """
+    __slots__ = ("name", "value")
+    
+    def __init__(self, name: str, value: Hashable) -> None:
+        self.name = name
+        self.value = value
+
+    @property
+    def __id(self) -> tuple[str, Hashable]:
+        return (self.name, self.value)
+    
+    def __hash__(self) -> int:
+        try:
+            return hash(self.__id)
+
+    def __eq__(self, other: StylePropertyType) -> bool:
+        if isinstance(other, StylePropertyType):
+            return self._id == other.__id
+
+        return False
+    
+    def __repr__(self) -> str:
+        return f"{self.name.casefold().replace("_", "-")}: {self.value};"
 
 class Style(AbstractHashable):
     """
@@ -64,3 +93,6 @@ class Style(AbstractHashable):
     def __iand__(self, other_style: StyleType) -> Self:
         self.properties += other_style.properties
         return self
+
+    def __repr__(self) -> int:
+        return "Style({self.id})"
