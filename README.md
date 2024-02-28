@@ -38,10 +38,10 @@ Define a Style at creation or apply a Style directly to UI a element using the `
 
 Python:
 ```py
-emphasis = font_decoration.underline | colors.red
+emphasis = font_decoration.underline & colors.red
 
 example = Container(style=styles.flex_direction.horizontal)(
-    Text("Hello World!") @ emphasis | font_weight.bold,
+    Text("Hello World!") @ emphasis & font_weight.bold,
 )
 ```
 
